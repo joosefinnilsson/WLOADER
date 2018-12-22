@@ -16,8 +16,7 @@ cscript  c:\windows\system32\slmgr.vbs /ato
 reg add "HKLM\Software\Policies\Microsoft\Windows NT\CurrentVersion\Software Protection Platform" /v NoGenTicket /t REG_DWORD /d 1 /f
 @echo
 @echo We do not want alot of schedule running in background for system perfomence
-@echo
-Windows 10 has a huge amount of scheduled tasks that may report some data. Type these commands in the command prompt to remove them: >$null 2>&1
+@echo Windows 10 has a huge amount of scheduled tasks that may report some data. Type these commands in the command prompt to remove them: >$null 2>&1
 schtasks /Change /TN "Microsoft\Windows\AppID\SmartScreenSpecific" /disable >$null 2>&1
 schtasks /Change /TN "Microsoft\Windows\Application Experience\AitAgent" /disable >$null 2>&1
 schtasks /Change /TN "Microsoft\Windows\Application Experience\Microsoft Compatibility Appraiser" /disable 
@@ -229,10 +228,6 @@ reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v "N
 reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\CompatTelRunner.exe" /v Debugger /t REG_SZ /d "%windir%\System32\taskkill.exe" /f >$null 2>&1
 @echo
 @echo ..Done
-@echo
-@echo
-@echo Sorry! Your version is not supported.
-@echo
 :halt
 pause >$null 2>&1
 
