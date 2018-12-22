@@ -58,7 +58,7 @@ del /F /Q "C:\Windows\System32\Tasks\Microsoft\Windows\SettingSync\*"  >$null 2>
 @echo ..Done
 @echo
 @echo
-@echo We to run of all auto update, it´s our choice if we wanna use this. 
+@echo Turn of all auto updates from Microsoft Windows, it´s our choice if we wanna use this. eh?
 @echo
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU" /v NoAutoUpdate /t REG_DWORD /d 0 /f >$null 2>&1
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU" /v AUOptions /t REG_DWORD /d 2 /f >$null 2>&1 
@@ -68,7 +68,7 @@ reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU" /v Scheduled
 @echo ..Done
 @echo
 @echo
-@echo Set windows defender permanent of (This will take a while ~1-5min)
+@echo Set windows defender permanent off (This will take a while ~1-5min)
 @echo
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\AppHost" /v "EnableWebContentEvaluation" /t REG_DWORD /d "0" /f >$null 2>&1
 reg add "HKCU\Software\Classes\Local Settings\Software\Microsoft\Windows\CurrentVersion\AppContainer\Storage\microsoft.microsoftedge_8wekyb3d8bbwe\MicrosoftEdge\PhishingFilter" /v "EnabledV9" /t 
